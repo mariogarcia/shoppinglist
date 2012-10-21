@@ -1,0 +1,12 @@
+<button 
+	ng:repeat="listName in names"
+	ng:controller="LoadListController" 
+	ng:click="loadList(listName)" 
+	class="btn btn-large btn-block btn-primary">{{listName}}</button>
+<div class="navbar navbar-fixed-bottom">
+	<div class="navbar-inner">
+		<ul class="nav">
+			<li><a href="#/index"><i class="icon-home"></i> Home</a></li>
+		</ul>
+	</div> 
+</div>

@@ -1,0 +1,22 @@
+<table class="table table-striped table-hover">
+   <tbody>
+		   <tr ng:repeat="item in items">
+				<td>
+					<a class="btn" 
+						ng-controller="ItemsController"
+						ng-click="remove(item)"><i class="icon-remove"/></i></a><td>
+				<td>{{item.description}}</td>
+				<td><span class="badge badge-info">{{item.units}}</span></td>
+				<td><strong>{{item.price * item.units}} €</strong></td>
+		   </tr>
+   </tbody>
+</table>
+<div class="navbar navbar-fixed-bottom">
+	<div class="navbar-inner">
+		<ul class="nav">
+			<li><a href="#/index"><i class="icon-home"></i> Home</a></li>
+			<li><a href="#/add-item"><i class="icon-plus-sign"></i> Add</a></li>
+			<li><a href="#/save-list"><i class="icon-hdd"></i> Save List</a></li>
+		</ul>
+	</div> 
+</div>

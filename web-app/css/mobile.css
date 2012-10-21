@@ -1,0 +1,6 @@
+/* Styles for mobile devices */
+
+@media screen and (max-width: 480px) {
+	.navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner{padding-left:45px;}
+	.first{margin-top:64px;}
+}
