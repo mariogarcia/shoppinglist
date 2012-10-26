@@ -9,8 +9,14 @@ import spock.lang.Specification
 @TestFor(ShoppingList)
 class ShoppingListUnitSpec extends Specification{
 
-	def "Testing whatever"(){
+	def "Saving a ShoppingList successfully"(){
 		expect:
-			true
+			!(new ShoppingList(name:name,description:description).save()) == fail
+		where:
+			name	|	description	   |	fail
+		   "list"	|	"my list"	   |	false
+			null	|	"my list"	   |	true
+		   "list"	|	 null		   |	true
 	}
+
 }

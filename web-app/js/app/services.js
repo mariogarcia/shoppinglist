@@ -1,12 +1,8 @@
 'use strict';
 
-var module = angular.module('shoppingServices', []);
-
-/**
- * This service manages the items inside the current list
- **/
-module.factory('ItemService', function($http){
-	var items = [];
+angular.module('shoppingServices', [],function($provide){
+	$provide.factory('ItemService', function($http){
+		var items = [];
  /* Methods implemented in this service */
 	return {
 	 /* Adds the item in the current list */
@@ -63,4 +59,6 @@ module.factory('ItemService', function($http){
 				error(callback);
 		}
 	}
+});
+
 });

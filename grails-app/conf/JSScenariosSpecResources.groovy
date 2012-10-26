@@ -1,9 +1,8 @@
 modules = {
-	mobile {
-		defaultBundle 'shopl'
+	angularTests{
 
 		dependsOn 'jquery'
-		dependsOn 'angular'
+		dependsOn 'angular-scenario'
 
 		resource url: 'css/bootstrap/bootstrap-responsive.css'
 		resource url: 'css/bootstrap/bootstrap.css'
@@ -13,5 +12,6 @@ modules = {
 		resource url: 'js/app/app.js'
 		resource url: 'js/app/controllers.js'
 		resource url: 'js/app/services.js'
+		resource url: 'js/tests/e2e/scenarios.js'
 	}
 }

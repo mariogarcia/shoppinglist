@@ -1,44 +1,24 @@
 package com.github.shoppinglist
 
-import org.hibernate.FetchMode as FM
 import grails.converters.JSON
-import groovy.json.JsonSlurper
 
+/**
+ * This controller does the backup and recovery of the shopping lists
+**/
 class ShoppingListController {
 
+	def shoppingListService
+
+ /* Saving the list and its item received inside a json string */
     def save() { 
-		def jsonData = new JsonSlurper().parseText(params.data)
-		def listItems = jsonData.items.collect{item->
-			[description:item.description,price:item.price,units:item.units] as ListItem
-		}
-		def shoppingList = 
-			new ShoppingList(name:jsonData.name,description:jsonData.name).save()
-		listItems.each{
-			shoppingList.addToItems(it).save()
-		}
-		def failure = shoppingList.hasErrors()
-		def restResponse = [status: (failure ? 'FAILURE' : 'SUCCESS'), cause: failure ? shoppingList.errors.toString() : ""]
-
-		render restResponse as JSON		
+		render shoppingListService.saveShoppingList(params.data) as JSON		
 	}
-
+ /* Looking for a given shopping list by its name */
 	def show() {
-		def listName = params.name
-		def shoppingList = ShoppingList.findByName(listName)
-		def responseData = shoppingList.properties.collectEntries{p->
-			["${p.key}":p.value]
-		} 
-		responseData.items = shoppingList.items
-		render responseData as JSON
+		render shoppingListService.findShoppingListByName(params.name) as JSON
 	}
-
+ /* Looking for the names of the stored lists */
 	def list(){
-		def listNames = ShoppingList.createCriteria().list{
-			projections{
-				property "name"	
-			}
-		}
-		
-		render listNames as JSON
+		render shoppingListService.listShoppingListNames() as JSON
 	}
 }

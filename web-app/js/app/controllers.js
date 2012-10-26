@@ -97,6 +97,15 @@ function AddNewItem($scope,$location,ItemService){
 	}
 }
 
+function SillyController($scope,ItemService){
+	$scope.la = [1,2];
+
+	$scope.add = function(number){
+		ItemService.list();
+		$scope.la.push(number);
+	}
+}
+
 /**
  * This controller handles the action of saving the current
  * list.

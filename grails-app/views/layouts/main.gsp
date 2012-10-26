@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title><g:layoutTitle default="Grails"/></title>
+		<title><g:layoutTitle default="Shopping List (Grails + AngularJS + Bootstrap)"/></title>
 		<g:layoutHead/>
 		<r:layoutResources />
 	</head>

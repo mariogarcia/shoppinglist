@@ -11,6 +11,10 @@ import spock.lang.Specification
 @TestFor(ShoppingListController)
 class ShoppingListControllerUnitSpec extends Specification{
 
+	def setup(){
+		controller.shoppingListService = new ShoppingListService()
+	}
+
 	def "Testing save action successfully"(){
 		setup: "Creating some jsonData to pass as parameter"
 			def jsonData = '''{
