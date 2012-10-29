@@ -1,18 +1,11 @@
 
 describe('Testing how items are managed by the ItemService', function(){
 
-	var _$scope;
-	var _$location;
-	var _$controller;
-	var _$http;
 	var itemService;
 
 	beforeEach(module('shoppingServices'));
  /* Injecting some needed properties */
-	beforeEach(inject(function($rootScope,$location,$controller,$injector){
-		_$scope = $rootScope;
-		_$location = $location;
-		_$controller = $controller;
+	beforeEach(inject(function($injector){
 		itemService = $injector.get("ItemService");
 	}));
 
