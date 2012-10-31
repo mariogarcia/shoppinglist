@@ -19,4 +19,4 @@ Client Side Tests
 Demo
 ====
 
-At the moment there is a running demo at [CloudFoundry](http://shoppinglist.cloudfoundy.com "Shopping List at Cloudfoundry") 
+At the moment there is a running demo at [CloudFoundry](http://shoppinglist.cloudfoundry.com "Shopping List at Cloudfoundry") 
