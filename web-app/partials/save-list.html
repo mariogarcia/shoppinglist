@@ -1,15 +1,20 @@
-<form>
-	<legend>Save List</legend>
-	<label>List Name</label>
-	<input class="input-xlarge" ng-model="listName" type="text" placeholder="Type something…"/>
-	<div class="row-fluid first">
-		<div class="span6">
-			<button ng:controller="SaveListController" 
-					ng:click="save(listName)" 
-					class="btn btn-large btn-block btn-primary">Save List</button>
+<form name="list">
+	<fieldset>
+		<legend>Save List</legend>
+		<label>List Name</label>
+		<input required="true" class="input-xlarge" ng-model="list.name" type="text" placeholder="Type something…"/>
+		<div class="row-fluid first">
+			<div class="span6">
+				<button ng:controller="SaveListController" 
+						ng:disabled="list.$invalid"
+						ng:click="save(list.name)" 
+						class="btn btn-large btn-block btn-primary">Save List</button>
+			</div>
+			<div class="span6">
+			<button 
+				ng:controller="SaveListController" 
+				ng:click="cancel()" class="btn btn-large btn-block btn-danger">Cancel</button>
+			</div>
 		</div>
-		<div class="span6">
-			<button ng:controller="SaveListController" ng:click="cancel()" class="btn btn-large btn-block btn-danger">Cancel</button>
-		</div>
-	</div>
+	</fieldset>
 </form>

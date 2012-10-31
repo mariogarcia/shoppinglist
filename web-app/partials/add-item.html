@@ -1,26 +1,43 @@
-<form>
-	<legend>New Item</legend>
-	<label>Product Description</label>
-	<input class="input-xlarge" ng-model="item.description" type="text" placeholder="Type something…"/>
-	<label>Price Per Unit</label>
-	<input class="input-medium" ng-model="item.price" type="text" placeholder="Type something…"/>
-	<label>Units</label>
-	<div class="input-append">
-	<input class="span2" id="appendedInputButtons" 
-			ng-model="item.units" size="16" type="text" placeholder="Units..."/>
-		<button class="btn" type="button" ng:click="plusOne(item)">
-			<i class="icon-arrow-up"></i>
-		</button>
-		<button class="btn" type="button" ng:click="minusOne(item)">
-			<i class="icon-arrow-down"></i>
-		</button>
-  	</div>	  
-	<div class="row-fluid first">
-		<div class="span6">
-			<button ng:controller="AddNewItem" ng:click="addToBasket(item)" class="btn btn-large btn-block btn-primary">Add To Basket</button>
+<form name="item">
+	<fieldset>
+		<legend>New Item</legend>
+		<label>Product Description</label>
+		<input class="input-xlarge" required="true" ng-model="item.description" type="text" placeholder="Product description…"/>
+		<label>Price Per Unit</label>
+		<input 
+			class="input-medium" 
+			type="number" 
+			required="true" 
+			ng-model="item.price" 
+			placeholder="Unit price…"/>
+		<label>Units</label>
+		<div class="input-append">
+			<input 
+				type="number" 
+				size="16" 
+				class="span2" 
+				id="appendedInputButtons" 
+				required="true" 
+				ng-model="item.units" 
+				placeholder="Units..."/>
+			<button class="btn" type="button" ng:click="plusOne(item)">
+				<i class="icon-arrow-up"></i>
+			</button>
+			<button class="btn" type="button" ng:click="minusOne(item)">
+				<i class="icon-arrow-down"></i>
+			</button>
+  		</div>	  
+		<div class="row-fluid first">
+			<div class="span6">
+			<button 
+				ng:controller="AddNewItem" 
+				ng:click="addToBasket(item)" 
+				ng:disabled="item.$invalid"
+				class="btn btn-large btn-block btn-primary">Add To Basket</button>
+			</div>
+			<div class="span6">
+				<button ng:controller="AddNewItem" ng:click="cancel()" class="btn btn-large btn-block btn-danger">Cancel</button>
+			</div>
 		</div>
-		<div class="span6">
-			<button ng:controller="AddNewItem" ng:click="cancel()" class="btn btn-large btn-block btn-danger">Cancel</button>
-		</div>
-	</div>
+	</fieldset>
 </form>

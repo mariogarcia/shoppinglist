@@ -1,6 +1,18 @@
 /* Styles for mobile devices */
 
-@media screen and (max-width: 480px) {
-	.navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner{padding-left:45px;}
-	.first{margin-top:64px;}
+@media screen and (max-width: 480px) {}
+
+.navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner{padding-left:45px;}
+.first{margin-top:64px;}
+
+input.ng-invalid{background-color:#f2dede;}
+legend{margin-bottom:20px;}
+label{font-size:1em;}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+ /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+	margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }

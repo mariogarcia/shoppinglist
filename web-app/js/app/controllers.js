@@ -58,6 +58,9 @@ function ItemsController($scope,$route,$location,ItemService){
 		ItemService.remove(item);
 		$route.reload();
 	}
+	$scope.tick = function(item){
+		item.checked = !item.checked;	
+	}
 }
 
 /**
@@ -76,11 +79,14 @@ function EditListController($scope,ItemService){
 function AddNewItem($scope,$location,ItemService){
  /* Adding one more unit */
 	$scope.plusOne = function(item){
-		item.units = parseInt(item.units) + 1;
+		var valid = item != null && !isNaN(item.units);
+		var value = valid ? item.units : 0;
+		item.units = value + 1;
 	}
  /* Minus one unit */
 	$scope.minusOne = function(item){
-		item.units = parseInt(item.units) - 1;
+		var value = item && !isNaN(item.units) ? item.units : 0;
+		item.units = value - 1;
 	}
  /* Adding the item to the basket */
 	$scope.addToBasket = function(item){
