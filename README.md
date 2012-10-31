@@ -1,15 +1,22 @@
-Shopping List
-==============
+Introduction
+============
 
-Grails mobile web-app using AngularJS and Twitter Bootstrap for the client side.
+Grails mobile web-app using AngularJS.
 
-Tests
-=====
+Technologies
+============
 
-You can see unit tests running at http://localhost:8080/shoppinglist/jasmine/unitTests
-You can see scenarios running at http://localhost:8080/shoppinglist/jasmine/angularTests
+1. Grails 2.1.1
+2. AngularJS 1.1.0
+3. Twitter Bootstrap 2.1.1
+
+Client Side Tests
+=================
+
+1. You can see unit tests running at http://localhost:8080/shoppinglist/jasmine/unitTests
+2. You can see scenarios running at http://localhost:8080/shoppinglist/jasmine/angularTests
 
 Demo
 ====
 
-At the moment there is a running demo at shoppinglist.cloudfoundy.com
+At the moment there is a running demo at [CloudFoundry](http://shoppinglist.cloudfoundy.com "Shopping List at Cloudfoundry") 
